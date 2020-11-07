@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --Dark-Gray: hsl(0, 0%, 59%);
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    /* height: 80vh; */
+    position: relative;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+header {
+    background-image: url(../assets/pattern-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 2rem;
+    padding-bottom: 12rem;
+}
+
+.btn {
+    border: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.input-form {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ip-input {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+}
+
+.submit-btn {
+    background-color: var(--very-dark-gray);
+    padding: 1.2rem;
+}
+
+.ip-address-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1200px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info-head {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--Dark-Gray);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.info-text {
+    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 600;
+    color: var(--very-dark-gray);
+}
+
+.info:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    header {
+        padding-bottom: 7rem;
+    }
+
+    .ip-address-info {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: initial;
+
+        padding-bottom: 2rem;
+    }
+
+    .info:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .info:not(:first-child) {
+        border-left: 1px solid var(--Dark-Gray);
+    }
+
+    .info {
+        text-align: left;
+        flex: 1;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .info-head {
+        margin-bottom: 1rem;
+    }
+}

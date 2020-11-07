@@ -5,6 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./styles/reset.css" />
         <link rel="stylesheet" href="./styles/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""
+        />
+        <script
+            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""
+        ></script>
         <title>IP Track</title>
     </head>
     <body>
@@ -33,24 +44,26 @@
                 <div class="ip-address-info">
                     <div class="info ip">
                         <h2 class="info-head">ip address</h2>
-                        <p class="info-text">192.212.174.101</p>
+                        <p class="info-text ip-address">192.212.174.101</p>
                     </div>
                     <div class="info location">
                         <h2 class="info-head">Location</h2>
-                        <p class="info-text">Brooklyn, NY 10001</p>
+                        <p class="info-text ip-location">Brooklyn, NY 10001</p>
                     </div>
                     <div class="info timezone">
                         <h2 class="info-head">timezone</h2>
-                        <p class="info-text">UTC - 5:00</p>
+                        <p class="info-text ip-timezone">UTC - 5:00</p>
                     </div>
                     <div class="info isp">
                         <h2 class="info-head">isp</h2>
-                        <p class="info-text">SpaceX Starlink</p>
+                        <p class="info-text ip-isp">SpaceX Starlink</p>
                     </div>
                 </div>
             </div>
 
-            <div class="ip-map"></div>
+            <div id="ip-map" class="ip-map"></div>
         </main>
+
+        <script src="./app/app.js"></script>
     </body>
 </html>

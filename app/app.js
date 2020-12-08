@@ -7,11 +7,16 @@ const getUserIP = async () => {
     return res.ip;
 };
 
-const getIpDetails = async (input) => {
+const getIpDetails = async (input = '') => {
+    const ip = await getUserIP();
+    let domain = typeof input === 'string' ? input : '';
+    let inputIp = Number.isInteger(Number(input[0])) ? input : '';
     const geoApiKey = 'at_KNHTMUE6uQHFT0IvnL1uK3FYqJYdK';
     const geoApiUrl = 'https://geo.ipify.org/api/v1';
-    const ip = await getUserIP();
-    const endpoint = `${geoApiUrl}?apiKey=${geoApiKey}&ipAddress=${input || ip}`;
+
+    const endpoint = inputIp
+        ? `${geoApiUrl}?apiKey=${geoApiKey}&ipAddress=${inputIp}`
+        : `${geoApiUrl}?apiKey=${geoApiKey}&domain=${domain}`;
     try {
         const req = await fetch(endpoint);
         const res = await req.json();
@@ -20,8 +25,6 @@ const getIpDetails = async (input) => {
         console.error(error);
     }
 };
-getIpDetails();
-// getUserIP();
 
 const renderMap = (lat, lon) => {
     // check if map exists
@@ -69,7 +72,7 @@ const ipLocation = document.querySelector('.ip-location');
 const ipTimezone = document.querySelector('.ip-timezone');
 const ipIsp = document.querySelector('.ip-isp');
 
-renderIpDetails();
+renderIpDetails(getUserIP());
 
 inputForm.addEventListener('submit', (e) => {
     e.preventDefault();

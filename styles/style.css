@@ -130,7 +130,7 @@ header {
 
 @media (min-width: 768px) {
     header {
-        padding-bottom: 9rem;
+        padding-bottom: 7.5rem;
     }
 
     .ip-address-info {
